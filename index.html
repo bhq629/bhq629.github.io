@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sisu Hautala - Digiportfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        header {
+            background-color: #4488c9d6;
+            color: #fff;
+            padding: 20px 0;
+            margin-bottom: 0;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        header h2 {
+            font-size: 1.5em;
+            margin-top: 10px;
+            font-weight: 300;
+            color: #ccc;
+        }
+
+        .menu {
+            margin-top: 0px;
+            background-color: #3a0a708c;
+            padding: 15px 0;
+        }
+
+        .menu button {
+            background-color: #8ece7cb3;
+            color: #fff;
+            border: noneround;
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu button:hover {
+            background-color: #ffffff92;
+        }
+
+        .content {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #fff;
+            width: 80%;
+            margin: 40px auto;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: none; /* Piilotettu aluksi */
+        }
+
+        .visible {
+            display: block; /* Näytetään kun nappia painetaan */
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Sisu Hautala</h1>
+        <h2>Digiportfolio</h2>
+    </header>
+
+    <div class="menu">
+        <button onclick="showContent('content1')">Esittely</button>
+        <button onclick="showContent('content2')">Projektit</button>
+        <button onclick="showContent('content3')">Osaaminen</button>
+        <button onclick="showContent('content4')">Blogi</button>
+        <button onclick="showContent('content5')">Yhteystiedot</button>
+    </div>
+
+    <div id="content1" class="content">
+        <h3>Esittely</h3>
+        <p>Tervetuloa digiportfoliooni! Olen Sisu Hautala, intohimoinen kehittäjä ja ongelmanratkaisija.</p>
+    </div>
+
+    <div id="content2" class="content">
+        <h3>Projektit</h3>
+        <p>Tässä ovat tärkeimmät projektini, joita olen tehnyt vuosien varrella. Jokainen niistä edustaa osaamistani ja luovuuttani.</p>
+    </div>
+
+    <div id="content3" class="content">
+        <h3>Osaaminen</h3>
+        <p>Osaan muun muassa ohjelmointia, web-kehitystä ja tietokantasuunnittelua. Käytän päivittäin työkaluja, kuten HTML, CSS, JavaScript ja Python.</p>
+    </div>
+
+    <div id="content4" class="content">
+        <h3>Blogi</h3>
+        <p>Kirjoitan blogiini säännöllisesti uusia artikkeleita teknologioista, projekteistani ja oppimisesta. Tervetuloa lukemaan!</p>
+    </div>
+
+    <div id="content5" class="content">
+        <h3>Yhteystiedot</h3>
+        <p>Voit ottaa minuun yhteyttä sähköpostilla: sisu.hautala@example.com tai seuraamalla minua sosiaalisessa mediassa.</p>
+    </div>
+
+    <script>
+        function showContent(contentId) {
+            // Piilota kaikki sisällöt
+            var contents = document.querySelectorAll('.content');
+            contents.forEach(function(content) {
+                content.classList.remove('visible');
+            });
+            
+            // Näytä vain valittu sisältö
+            var selectedContent = document.getElementById(contentId);
+            selectedContent.classList.add('visible');
+        }
+    </script>
+
+</body>
+</html>

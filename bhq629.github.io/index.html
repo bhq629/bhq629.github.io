@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sisu Hautala - Digiportfolio</title>
+
+    <!-- Linkki tyylitiedostoon (tyyli.css) -->
+    <link href="tyyli.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+
+    <header>
+        <h1>Sisu Hautala</h1>
+        <h2>Digiportfolio</h2>
+    </header>
+
+    <div class="menu">
+        <button id="btn1" onclick="showContent('content1', this)">Esittely</button>
+        <button id="btn2" onclick="showContent('content2', this)">Projektit</button>
+        <button id="btn3" onclick="showContent('content3', this)">Osaaminen</button>
+        <button id="btn4" onclick="showContent('content4', this)">Elämää</button>
+        <button id="btn5" onclick="showContent('content5', this)">Yhteystiedot</button>
+    </div>
+
+    <div id="content1" class="content visible">
+        <h3>Esittely</h3>           
+        <p>Tervetuloa digiportfoliooni! Olen Sisu Hautala, kilpailuhenkinen ongelmien valloittaja, ja aktiivinen oppija. </p>
+        <p>Kyhäsin kouluprojektina myös esittelyvideon itsestäni:</p>
+
+        <!-- Linkki videoon -->
+        <p><a href="https://www.youtube.com/watch?v=-14G1kEjSTg" target="_blank">Video CV (Sisu Hautala 20v)</a></p>
+        
+        <!-- Upotettu video -->
+        <p>
+            <iframe src="https://www.youtube.com/embed/-14G1kEjSTg" 
+                style="width: 100%; max-width: 560px; height: 315px;" 
+                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen></iframe>
+        </p>
+        
+    </div>
+
+    <div id="content2" class="content">
+        <h3>Harrastukset ja Projektit</h3>
+        <p>Kokeilen uusia harrastuksia vuosittain. Tällä hetkellä harrastan pingistä, golffia ja jalkapalloa. Lisäksi satunnaisesti harjoittelen videoiden editointia.</p>
+        <p>Projekteja minulta löytyy myös jotain. Ei vielä mitään isoja, mutta esimerkiksi Geometry Dash -pelin leveleditorissa olen käyttänyt yhteen tasoon ainakin 100 tuntia, ehkä sen voi laskea projektiksi.</p>
+        <p>Pelaan myös shakkia, Chess.com-sivustolla vahvuuslukuni 10 minuutin formaatissa on noin 1650, ja tavoitteenani on nostaa se jopa 1800:aan vielä tänä vuonna.</p>
+    <p><img src="Kuvatfolio/chessprofiili.jpg" alt="Shakkiprofiilini Chess.comissa" width="200">
+        <img src="Kuvatfolio/chessrating.jpg" alt="Shakkiprofiilini Chess.comissa" width="200"></p>
+    <p><img src="Kuvatfolio/geokuva.jpg" alt="leveleditor pic" style="width: 100%; max-width: 900px; height: auto;"></p>
+    
+    </div>
+
+    <div id="content3" class="content">
+        <h3>Osaaminen</h3>
+        <p>Olen Haaga-Helian opiskelija ja opiskelen työelämässä tarvittavia taitoja. Sisäisiä taitojani ovat nopea oppimiskyky ja kiinnostus uusiin asioihin.</p>
+        <p>Olen kokeillut kymmeniä eri urheilulajeja ja videopelejä. Kaikissa olen muutamien tuntien harjoittelun jälkeen lähes kaikkia muita saman verran harjoitelleita ihmisiä edellä taitotasoni puolesta.</p>
+        <p>Sain myös Mensan nettisivuilla tehtävästä älykkyystestistä muutama vuosi sitten tuloksen 132, voisin tehdä kohta uudestaan.</p>
+
+    </div>
+
+    <div id="content4" class="content">
+        <h3>Koulutus ja Elämäntilanne</h3>
+        <p>Peruskoulu: Postipuun koulu</p>
+        <p>Yläaste: Leppävaaran koulu</p>
+        <p>Lukio: Etelä-Tapiolan lukio</p>
+        <p>Varastotyö: 6 kuukautta</p>
+        <p>Armeija: Panssarijääkäri, 6 kuukautta</p>
+        <p>Varastotyö: 1 vuosi</p>
+        <p>Ammattikorkeakoulu: Haaga-Helia, nykyinen opiskelija</p>
+    </div>
+
+    <div id="content5" class="content">
+        <h3>Yhteystiedot</h3>
+        <p>Sähköposti: sisu.hautala@gmail.com</p>
+        <p>Puhelin: 045 257 4457</p>
+        <p><img src="kuvatfolio\pfp24.jpg" alt="Shakkiprofiilini Chess.comissa" width="200"></p>
+    </div>
+
+    <script>
+        function showContent(contentId, btn) {
+            // Piilota kaikki sisällöt
+            var contents = document.querySelectorAll('.content');
+            contents.forEach(function(content) {
+                content.classList.remove('visible');
+            });
+            
+            // Näytä valittu sisältö
+            var selectedContent = document.getElementById(contentId);
+            selectedContent.classList.add('visible');
+
+            // Poista 'active' kaikilta napeilta
+            var buttons = document.querySelectorAll('.menu button');
+            buttons.forEach(function(button) {
+                button.classList.remove('active');
+            });
+
+            // Lisää 'active' luokka valitulle napille
+            btn.classList.add('active');
+        }
+
+        // Näytä "Esittely" sisältö ja aseta vastaava nappi aktiiviseksi, kun sivu ladataan
+        window.onload = function() {
+            showContent('content1', document.getElementById('btn1'));
+        };
+    </script>
+
+</body>
+</html>

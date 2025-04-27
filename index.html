@@ -1,111 +1,185 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sisu Hautala - Digiportfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sisu Hautala - Digiportfolio</title>
 
-    <!-- Linkki tyylitiedostoon (tyyli.css) -->
-    <link href="tyyli.css" rel="stylesheet" type="text/css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
+  <!-- Oma tyylitiedosto -->
+  <link href="tyyli.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
-    <header>
-        <h1>Sisu Hautala</h1>
-        <h2>Digiportfolio</h2>
-    </header>
-
-    <div class="menu">
-        <button id="btn1" onclick="showContent('content1', this)">Esittely</button>
-        <button id="btn2" onclick="showContent('content2', this)">Projektit</button>
-        <button id="btn3" onclick="showContent('content3', this)">Osaaminen</button>
-        <button id="btn4" onclick="showContent('content4', this)">Elämää</button>
-        <button id="btn5" onclick="showContent('content5', this)">Yhteystiedot</button>
+  <!-- Navigaatio -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Sisu Hautala</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#esittely">Esittely</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projektit">Projektit</a></li>
+          <li class="nav-item"><a class="nav-link" href="#osaaminen">Osaaminen</a></li>
+          <li class="nav-item"><a class="nav-link" href="#elama">Elämä</a></li>
+          <li class="nav-item"><a class="nav-link" href="#yhteystiedot">Yhteystiedot</a></li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
-    <div id="content1" class="content visible">
-        <h3>Esittely</h3>           
-        <p>Tervetuloa digiportfoliooni! Olen Sisu Hautala, kilpailuhenkinen ongelmien valloittaja, ja aktiivinen oppija. </p>
-        <p>Kyhäsin kouluprojektina myös esittelyvideon itsestäni:</p>
+  <!-- Header -->
+  <header class="text-center py-4">
+    <h1>Sisu Hautala</h1>
+    <h2>Digiportfolio</h2>
+  </header>
 
-        <!-- Linkki videoon -->
-        <p><a href="https://www.youtube.com/watch?v=-14G1kEjSTg" target="_blank">Video CV (Sisu Hautala 20v)</a></p>
-        
-        <!-- Upotettu video -->
-        <p>
-            <iframe src="https://www.youtube.com/embed/-14G1kEjSTg" 
-                style="width: 100%; max-width: 560px; height: 315px;" 
-                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen></iframe>
-        </p>
-        
+  <!-- Kuvakaruselli -->
+  <div id="carouselExampleIndicators" class="carousel slide container mb-5" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></button>
     </div>
-
-    <div id="content2" class="content">
-        <h3>Harrastukset ja Projektit</h3>
-        <p>Kokeilen uusia harrastuksia vuosittain. Tällä hetkellä harrastan pingistä, golffia ja jalkapalloa. Lisäksi satunnaisesti harjoittelen videoiden editointia.</p>
-        <p>Projekteja minulta löytyy myös jotain. Ei vielä mitään isoja, mutta esimerkiksi Geometry Dash -pelin leveleditorissa olen käyttänyt yhteen tasoon ainakin 100 tuntia, ehkä sen voi laskea projektiksi.</p>
-        <p>Pelaan myös shakkia, Chess.com-sivustolla vahvuuslukuni 10 minuutin formaatissa on noin 1650, ja tavoitteenani on nostaa se jopa 1800:aan vielä tänä vuonna.</p>
-    <p><img src="./Kuvatfolio copy 2/chessprofiili.jpg" alt="Shakkiprofiilini Chess.comissa" width="200">
-        <img src="./Kuvatfolio copy 2/chessrating.jpg" alt="Shakkiprofiilini Chess.comissa" width="200"></p>
-    <p><img src="./Kuvatfolio copy 2/geokuva.jpg" alt="leveleditor pic" style="width: 100%; max-width: 900px; height: auto;"></p>
-    
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="./Kuvatfolio copy 2/chessprofiili.jpg" class="d-block w-100" alt="Shakki">
+      </div>
+      <div class="carousel-item">
+        <img src="./Kuvatfolio copy 2/chessrating.jpg" class="d-block w-100" alt="Rating">
+      </div>
+      <div class="carousel-item">
+        <img src="./Kuvatfolio copy 2/geokuva.jpg" class="d-block w-100" alt="Geometry Dash">
+      </div>
     </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
 
-    <div id="content3" class="content">
-        <h3>Osaaminen</h3>
-        <p>Olen Haaga-Helian opiskelija ja opiskelen työelämässä tarvittavia taitoja. Sisäisiä taitojani ovat nopea oppimiskyky ja kiinnostus uusiin asioihin.</p>
-        <p>Olen kokeillut kymmeniä eri urheilulajeja ja videopelejä. Kaikissa olen muutamien tuntien harjoittelun jälkeen lähes kaikkia muita saman verran harjoitelleita ihmisiä edellä taitotasoni puolesta.</p>
-        <p>Sain myös Mensan nettisivuilla tehtävästä älykkyystestistä muutama vuosi sitten tuloksen 132, voisin tehdä kohta uudestaan.</p>
+  <!-- Esittely -->
+  <section id="esittely" class="container my-5">
+    <h3>Esittely</h3>
+    <p>Tervetuloa digiportfoliooni! Olen Sisu Hautala, kilpailuhenkinen ongelmien valloittaja ja aktiivinen oppija.</p>
+    <p>Kyhäsin kouluprojektina myös esittelyvideon itsestäni:</p>
 
+    <div class="ratio ratio-16x9">
+      <iframe src="https://www.youtube.com/embed/-14G1kEjSTg" allowfullscreen></iframe>
     </div>
+  </section>
 
-    <div id="content4" class="content">
-        <h3>Koulutus ja Elämäntilanne</h3>
-        <p>Peruskoulu: Postipuun koulu</p>
-        <p>Yläaste: Leppävaaran koulu</p>
-        <p>Lukio: Etelä-Tapiolan lukio</p>
-        <p>Varastotyö: 6 kuukautta</p>
-        <p>Armeija: Panssarijääkäri, 6 kuukautta</p>
-        <p>Varastotyö: 1 vuosi</p>
-        <p>Ammattikorkeakoulu: Haaga-Helia, nykyinen opiskelija</p>
+  <!-- Projektit ruudukko + kortit -->
+  <section id="projektit" class="container my-5">
+    <h3>Harrastukset ja Projektit</h3>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="./Kuvatfolio copy 2/chessprofiili.jpg" class="card-img-top" alt="Shakki">
+          <div class="card-body">
+            <h5 class="card-title">Shakki</h5>
+            <p class="card-text">Chess.com-profiilini: tavoite nostaa rating 1800:aan tänä vuonna.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="./Kuvatfolio copy 2/chessrating.jpg" class="card-img-top" alt="Rating">
+          <div class="card-body">
+            <h5 class="card-title">Shakkitulokset</h5>
+            <p class="card-text">Nykyinen rating noin 1650 pikashakissa 10 minuutin formaatissa.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="./Kuvatfolio copy 2/geokuva.jpg" class="card-img-top" alt="GD-taso">
+          <div class="card-body">
+            <h5 class="card-title">Geometry Dash</h5>
+            <p class="card-text">100+ tuntia käytetty tämän yhden tason rakentamiseen.</p>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div id="content5" class="content">
-        <h3>Yhteystiedot</h3>
-        <p>Sähköposti: sisu.hautala@gmail.com</p>
-        <p>Puhelin: 045 257 4457</p>
-        <p><img src="./Kuvatfolio copy 2/pfp24.jpg" alt="Shakkiprofiilini Chess.comissa" width="200"></p>
+  <!-- Osaaminen -->
+  <section id="osaaminen" class="container my-5">
+    <h3>Osaaminen</h3>
+    <p>Olen Haaga-Helian opiskelija. Sisäisiä vahvuuksiani ovat nopea oppiminen ja kiinnostus uusiin asioihin.</p>
+
+    <!-- Taulukko -->
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Taito</th>
+          <th>Kuvaus</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Nopea oppiminen</td>
+          <td>Saan nopeasti kiinni uusista taidoista ja konsepteista.</td>
+        </tr>
+        <tr>
+          <td>Strateginen ajattelu</td>
+          <td>Shakin ja pelisuunnittelun kautta kehitettyä.</td>
+        </tr>
+        <tr>
+          <td>Videoeditointi</td>
+          <td>Opetellut Premiere Pro:lla ja CapCutilla.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Elämäntilanne Haitari -->
+  <section id="elama" class="container my-5">
+    <h3>Elämäntilanne</h3>
+    <div class="accordion" id="accordionElama">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#koulutus">
+            Koulutus
+          </button>
+        </h2>
+        <div id="koulutus" class="accordion-collapse collapse show" data-bs-parent="#accordionElama">
+          <div class="accordion-body">
+            Postipuun koulu → Leppävaaran koulu → Etelä-Tapiolan lukio → Haaga-Helia.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tyokokemus">
+            Työkokemus
+          </button>
+        </h2>
+        <div id="tyokokemus" class="accordion-collapse collapse" data-bs-parent="#accordionElama">
+          <div class="accordion-body">
+            Varastotyötä yhteensä 1,5 vuotta, lisäksi armeija Panssarijääkärinä.
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <script>
-        function showContent(contentId, btn) {
-            // Piilota kaikki sisällöt
-            var contents = document.querySelectorAll('.content');
-            contents.forEach(function(content) {
-                content.classList.remove('visible');
-            });
-            
-            // Näytä valittu sisältö
-            var selectedContent = document.getElementById(contentId);
-            selectedContent.classList.add('visible');
+  <!-- Yhteystiedot -->
+  <section id="yhteystiedot" class="container my-5 text-center">
+    <h3>Yhteystiedot</h3>
+    <p>Sähköposti: <a href="mailto:sisu.hautala@gmail.com">sisu.hautala@gmail.com</a></p>
+    <p>Puhelin: 045 257 4457</p>
+    <img src="./Kuvatfolio copy 2/pfp24.jpg" alt="Profiilikuva" class="img-fluid rounded" style="max-width: 200px;">
+  </section>
 
-            // Poista 'active' kaikilta napeilta
-            var buttons = document.querySelectorAll('.menu button');
-            buttons.forEach(function(button) {
-                button.classList.remove('active');
-            });
-
-            // Lisää 'active' luokka valitulle napille
-            btn.classList.add('active');
-        }
-
-        // Näytä "Esittely" sisältö ja aseta vastaava nappi aktiiviseksi, kun sivu ladataan
-        window.onload = function() {
-            showContent('content1', document.getElementById('btn1'));
-        };
-    </script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

@@ -4,71 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sisu Hautala - Digiportfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            text-align: center;
-        }
 
-        header {
-            background-color: #4488c9d6;
-            color: #fff;
-            padding: 20px 0;
-            margin-bottom: 0;
-        }
+    <!-- Linkki tyylitiedostoon (tyyli.css) -->
+    <link href="tyyli.css" rel="stylesheet" type="text/css">
 
-        header h1 {
-            font-size: 3em;
-            margin: 0;
-        }
-
-        header h2 {
-            font-size: 1.5em;
-            margin-top: 10px;
-            font-weight: 300;
-            color: #ccc;
-        }
-
-        .menu {
-            margin-top: 0px;
-            background-color: #3a0a708c;
-            padding: 15px 0;
-        }
-
-        .menu button {
-            background-color: #8ece7cb3;
-            color: #fff;
-            border: noneround;
-            padding: 10px 20px;
-            margin: 0 10px;
-            font-size: 1em;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .menu button:hover {
-            background-color: #ffffff92;
-        }
-
-        .content {
-            margin-top: 40px;
-            padding: 20px;
-            background-color: #fff;
-            width: 80%;
-            margin: 40px auto;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            display: none; /* Piilotettu aluksi */
-        }
-
-        .visible {
-            display: block; /* Näytetään kun nappia painetaan */
-        }
-
-    </style>
 </head>
 <body>
 
@@ -78,50 +17,94 @@
     </header>
 
     <div class="menu">
-        <button onclick="showContent('content1')">Esittely</button>
-        <button onclick="showContent('content2')">Projektit</button>
-        <button onclick="showContent('content3')">Osaaminen</button>
-        <button onclick="showContent('content4')">Blogi</button>
-        <button onclick="showContent('content5')">Yhteystiedot</button>
+        <button id="btn1" onclick="showContent('content1', this)">Esittely</button>
+        <button id="btn2" onclick="showContent('content2', this)">Projektit</button>
+        <button id="btn3" onclick="showContent('content3', this)">Osaaminen</button>
+        <button id="btn4" onclick="showContent('content4', this)">Elämää</button>
+        <button id="btn5" onclick="showContent('content5', this)">Yhteystiedot</button>
     </div>
 
-    <div id="content1" class="content">
-        <h3>Esittely</h3>
-        <p>Tervetuloa digiportfoliooni! Olen Sisu Hautala, intohimoinen kehittäjä ja ongelmanratkaisija.</p>
+    <div id="content1" class="content visible">
+        <h3>Esittely</h3>           
+        <p>Tervetuloa digiportfoliooni! Olen Sisu Hautala, kilpailuhenkinen ongelmien valloittaja, ja aktiivinen oppija. </p>
+        <p>Kyhäsin kouluprojektina myös esittelyvideon itsestäni:</p>
+
+        <!-- Linkki videoon -->
+        <p><a href="https://www.youtube.com/watch?v=-14G1kEjSTg" target="_blank">Video CV (Sisu Hautala 20v)</a></p>
+        
+        <!-- Upotettu video -->
+        <p>
+            <iframe src="https://www.youtube.com/embed/-14G1kEjSTg" 
+                style="width: 100%; max-width: 560px; height: 315px;" 
+                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen></iframe>
+        </p>
+        
     </div>
 
     <div id="content2" class="content">
-        <h3>Projektit</h3>
-        <p>Tässä ovat tärkeimmät projektini, joita olen tehnyt vuosien varrella. Jokainen niistä edustaa osaamistani ja luovuuttani.</p>
+        <h3>Harrastukset ja Projektit</h3>
+        <p>Kokeilen uusia harrastuksia vuosittain. Tällä hetkellä harrastan pingistä, golffia ja jalkapalloa. Lisäksi satunnaisesti harjoittelen videoiden editointia.</p>
+        <p>Projekteja minulta löytyy myös jotain. Ei vielä mitään isoja, mutta esimerkiksi Geometry Dash -pelin leveleditorissa olen käyttänyt yhteen tasoon ainakin 100 tuntia, ehkä sen voi laskea projektiksi.</p>
+        <p>Pelaan myös shakkia, Chess.com-sivustolla vahvuuslukuni 10 minuutin formaatissa on noin 1650, ja tavoitteenani on nostaa se jopa 1800:aan vielä tänä vuonna.</p>
+    <p><img src="./Kuvatfolio copy 2/chessprofiili.jpg" alt="Shakkiprofiilini Chess.comissa" width="200">
+        <img src="./Kuvatfolio copy 2/chessrating.jpg" alt="Shakkiprofiilini Chess.comissa" width="200"></p>
+    <p><img src="./Kuvatfolio copy 2/geokuva.jpg" alt="leveleditor pic" style="width: 100%; max-width: 900px; height: auto;"></p>
+    
     </div>
 
     <div id="content3" class="content">
         <h3>Osaaminen</h3>
-        <p>Osaan muun muassa ohjelmointia, web-kehitystä ja tietokantasuunnittelua. Käytän päivittäin työkaluja, kuten HTML, CSS, JavaScript ja Python.</p>
+        <p>Olen Haaga-Helian opiskelija ja opiskelen työelämässä tarvittavia taitoja. Sisäisiä taitojani ovat nopea oppimiskyky ja kiinnostus uusiin asioihin.</p>
+        <p>Olen kokeillut kymmeniä eri urheilulajeja ja videopelejä. Kaikissa olen muutamien tuntien harjoittelun jälkeen lähes kaikkia muita saman verran harjoitelleita ihmisiä edellä taitotasoni puolesta.</p>
+        <p>Sain myös Mensan nettisivuilla tehtävästä älykkyystestistä muutama vuosi sitten tuloksen 132, voisin tehdä kohta uudestaan.</p>
+
     </div>
 
     <div id="content4" class="content">
-        <h3>Blogi</h3>
-        <p>Kirjoitan blogiini säännöllisesti uusia artikkeleita teknologioista, projekteistani ja oppimisesta. Tervetuloa lukemaan!</p>
+        <h3>Koulutus ja Elämäntilanne</h3>
+        <p>Peruskoulu: Postipuun koulu</p>
+        <p>Yläaste: Leppävaaran koulu</p>
+        <p>Lukio: Etelä-Tapiolan lukio</p>
+        <p>Varastotyö: 6 kuukautta</p>
+        <p>Armeija: Panssarijääkäri, 6 kuukautta</p>
+        <p>Varastotyö: 1 vuosi</p>
+        <p>Ammattikorkeakoulu: Haaga-Helia, nykyinen opiskelija</p>
     </div>
 
     <div id="content5" class="content">
         <h3>Yhteystiedot</h3>
-        <p>Voit ottaa minuun yhteyttä sähköpostilla: sisu.hautala@example.com tai seuraamalla minua sosiaalisessa mediassa.</p>
+        <p>Sähköposti: sisu.hautala@gmail.com</p>
+        <p>Puhelin: 045 257 4457</p>
+        <p><img src="./Kuvatfolio copy 2/pfp24.jpg" alt="Shakkiprofiilini Chess.comissa" width="200"></p>
     </div>
 
     <script>
-        function showContent(contentId) {
+        function showContent(contentId, btn) {
             // Piilota kaikki sisällöt
             var contents = document.querySelectorAll('.content');
             contents.forEach(function(content) {
                 content.classList.remove('visible');
             });
             
-            // Näytä vain valittu sisältö
+            // Näytä valittu sisältö
             var selectedContent = document.getElementById(contentId);
             selectedContent.classList.add('visible');
+
+            // Poista 'active' kaikilta napeilta
+            var buttons = document.querySelectorAll('.menu button');
+            buttons.forEach(function(button) {
+                button.classList.remove('active');
+            });
+
+            // Lisää 'active' luokka valitulle napille
+            btn.classList.add('active');
         }
+
+        // Näytä "Esittely" sisältö ja aseta vastaava nappi aktiiviseksi, kun sivu ladataan
+        window.onload = function() {
+            showContent('content1', document.getElementById('btn1'));
+        };
     </script>
 
 </body>

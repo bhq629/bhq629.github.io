@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>Laaja JSON-esimerkki</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { padding: 2rem; background-color: #f7f7f7; }
+    img { max-width: 100%; height: auto; border-radius: 12px; margin-bottom: 1rem; }
+    .card { margin-bottom: 1rem; }
+    .star { color: gold; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="mb-4">Laaja JSON-esimerkki</h1>
+    <div id="sisalto"></div>
+  </div>
+
+  <script>
+    fetch('laajennettu_data.json')
+      .then(response => response.json())
+      .then(data => naytaSivu(data))
+      .catch(() => {
+        document.getElementById("sisalto").innerHTML = "<p class='text-danger'>JSON-datan lataus epäonnistui.</p>";
+      });
+
+    function naytaSivu(data) {
+      let html = `
+        <h2>${data.otsikko}</h2>
+        <p>${data.kuvaus}</p>
+        <img src="${data.kuva}" alt="Kurssikuva">
+
+        <h4 class="mt-4">Opintojakso</h4>
+        <ul>
+          <li><strong>Nimi:</strong> ${data.opintojakso.nimi}</li>
+          <li><strong>Tunnus:</strong> ${data.opintojakso.tunnus}</li>
+          <li><strong>Opintopisteet:</strong> ${data.opintojakso.opintopisteet}</li>
+          <li><strong>Aikaväli:</strong> ${data.opintojakso.alkupvm} – ${data.opintojakso.loppupvm}</li>
+        </ul>
+
+        <h4 class="mt-4">Opettajat</h4>
+        <ul>
+      `;
+
+      for (let opettaja of data.opettajat) {
+        html += `<li>${opettaja.nimi} – <a href="mailto:${opettaja.email}">${opettaja.email}</a> ${opettaja.aktiivinen ? '<span class="badge bg-success">Aktiivinen</span>' : '<span class="badge bg-secondary">Ei aktiivinen</span>'}</li>`;
+      }
+
+      html += `</ul><h4 class="mt-4">Taitotasot</h4><ul>`;
+      for (let taso of data.taitotasot) {
+        html += `<li>${taso}</li>`;
+      }
+
+      html += `</ul><h4 class="mt-4">Opiskelijat (${data.opiskelijat.length})</h4><ul>`;
+      for (let opiskelija of data.opiskelijat) {
+        html += `<li>${opiskelija.nimi} ${opiskelija.valmis ? '✅' : '🕒'}</li>`;
+      }
+
+      html += `</ul><h4 class="mt-4">Arvostelut</h4>`;
+      for (let arvio of data.arvostelut) {
+        html += `
+          <div class="card p-3">
+            <h5>${arvio.kayttaja}</h5>
+            <p>${'⭐'.repeat(arvio.arvosana)}${'☆'.repeat(5 - arvio.arvosana)}</p>
+            <p>${arvio.kommentti}</p>
+          </div>
+        `;
+      }
+
+      document.getElementById("sisalto").innerHTML = html;
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

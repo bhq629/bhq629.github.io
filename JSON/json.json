@@ -1,0 +1,27 @@
+{
+    "otsikko": "Web-sovelluskurssi – JSON-sivusto",
+    "kuvaus": "Tämä esimerkki havainnollistaa monipuolista JSON-datan käyttöä verkkosivulla.",
+    "kuva": "https://via.placeholder.com/600x300?text=Kurssikuva",
+    "opintojakso": {
+      "nimi": "Web-sovellukset",
+      "tunnus": "WEB4TA001",
+      "opintopisteet": 5,
+      "alkupvm": "2025-01-10",
+      "loppupvm": "2025-03-31"
+    },
+    "opettajat": [
+      { "nimi": "Mikko Meikäläinen", "email": "mikko@example.com", "aktiivinen": true },
+      { "nimi": "Anna Opettaja", "email": "anna@example.com", "aktiivinen": false }
+    ],
+    "taitotasot": ["Aloittelija", "Perustaso", "Edistynyt", "Asiantuntija"],
+    "arvostelut": [
+      { "kayttaja": "Sisu", "arvosana": 4, "kommentti": "Hyvä ja selkeä kurssi!" },
+      { "kayttaja": "Ella", "arvosana": 5, "kommentti": "Opin todella paljon käytännöstä." }
+    ],
+    "opiskelijat": [
+      { "nimi": "Sisu Hautala", "valmis": true },
+      { "nimi": "Maria Virtanen", "valmis": false },
+      { "nimi": "Arto Hiltunen", "valmis": true }
+    ]
+  }
+  
